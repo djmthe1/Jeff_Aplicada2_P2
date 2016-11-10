@@ -13,10 +13,16 @@ namespace BLL
         public int Cantidad { get; set; }
         public int Precio { get; set; }
 
-        public VentasDetalle(int id, int ventaId, int articuloId, int cantidad, int precio)
+        public VentasDetalle(int ventaId, int articuloId, int cantidad, int precio)
         {
-            this.Id = id;
             this.VentaId = ventaId;
+            this.Cantidad = cantidad;
+            this.Precio = precio;
+        }
+
+        public VentasDetalle()
+        {
+
         }
     }
 }
