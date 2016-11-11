@@ -65,7 +65,18 @@
     <Content Include="Boostrap\toastr.min.css" />
     <Content Include="Consultas\ConsultaArticulos.aspx" />
     <Content Include="Consultas\ConsultaVentas.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Index.aspx" />
     <Content Include="JQuery\toastr.min.js" />
+    <Content Include="js\easing.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery.magnific-popup.js" />
+    <Content Include="js\jquery.nav.js" />
+    <Content Include="js\jquery.scrollTo.js" />
+    <Content Include="js\jquery.wmuSlider.js" />
+    <Content Include="js\move-top.js" />
     <Content Include="packages.config" />
     <Content Include="Master.Master" />
     <None Include="Properties\Settings.settings">
@@ -90,6 +101,13 @@
     </Compile>
     <Compile Include="Consultas\ConsultaVentas.aspx.designer.cs">
       <DependentUpon>ConsultaVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>

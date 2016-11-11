@@ -58,6 +58,7 @@ namespace Jeff_Aplicada2_P2
             PrecioTextBox.Text = string.Empty;
             CantidadTextBox.Text = "1";
             LLenarGridView();
+            ObtenerGridView();
         }
 
         private void ObtenerValores(Ventas venta)
@@ -126,11 +127,18 @@ namespace Jeff_Aplicada2_P2
         {
             try
             {
-                DataTable dtArticulos = (DataTable)ViewState["Articulos"];
-                dtArticulos.Rows.Add(DropDownList.SelectedValue, CantidadTextBox.Text, PrecioTextBox.Text);
-                ViewState["Articulos"] = dtArticulos;
-                ObtenerGridView();
-                Monto();
+                if (CantidadTextBox.Text != "" && PrecioTextBox.Text != "")
+                {
+                    DataTable dtArticulos = (DataTable)ViewState["Articulos"];
+                    dtArticulos.Rows.Add(DropDownList.SelectedValue, CantidadTextBox.Text, PrecioTextBox.Text);
+                    ViewState["Articulos"] = dtArticulos;
+                    ObtenerGridView();
+                    Monto();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Debe llenar todos los campos')</script>");
+                }
             }
             catch (Exception ex)
             {

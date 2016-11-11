@@ -21,15 +21,12 @@
             width: 269px;
         }
         .auto-style8 {
-            width: 268px;
-            text-align: right;
-        }
+        width: 342px;
+        text-align: right;
+    }
         .auto-style9 {
-            width: 449px;
-        }
-        .auto-style10 {
-            width: 217px;
-        }
+        width: 466px;
+    }
         .auto-style11 {
             width: 270px;
             text-align: center;
@@ -45,8 +42,8 @@
             color: #333300;
         }
         .auto-style13 {
-            font-weight: bold;
-        }
+        width: 278px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -75,9 +72,7 @@
                 <asp:TextBox ID="VentaIdTextBox" runat="server" Width="260px"></asp:TextBox>
             </td>
             <td>
-                <strong>
-                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="80px" CssClass="auto-style13" OnClick="BuscarButton_Click" />
-                </strong>
+                <asp:Button ID="BuscarButton" runat="server" Class="btn-primary" Text="Buscar" Width="80px" OnClick="BuscarButton_Click" />
             </td>
         </tr>
         <tr>
@@ -97,7 +92,7 @@
     </table>
     <table class="auto-style1">
         <tr>
-            <td class="auto-style10">&nbsp;</td>
+            <td class="auto-style13">&nbsp;</td>
             <td class="auto-style9"><strong>Articulo: </strong>
                 <asp:DropDownList ID="DropDownList" runat="server" Height="20px" Width="145px">
                 </asp:DropDownList>
@@ -107,13 +102,11 @@
                 <asp:TextBox ID="PrecioTextBox" runat="server" Width="55px"></asp:TextBox>
             </td>
             <td>
-                <strong>
-                <asp:Button ID="AgregarButton" runat="server" Text="Agregar" CssClass="auto-style13" OnClick="AgregarButton_Click" />
-                </strong>
+                <asp:Button ID="AgregarButton" runat="server" Class="btn-primary" Text="Agregar" OnClick="AgregarButton_Click" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style10">&nbsp;</td>
+            <td class="auto-style13">&nbsp;</td>
             <td class="auto-style9">
                 <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" Width="384px" Height="106px">
                     <Columns>
@@ -126,7 +119,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style10">&nbsp;</td>
+            <td class="auto-style13">&nbsp;</td>
             <td class="auto-style9">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -139,19 +132,15 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <strong>
-                <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" Width="80px" CssClass="auto-style13" OnClick="NuevoButton_Click" />
-                </strong>
+                <asp:Button ID="NuevoButton" runat="server" Class="btn-primary" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
             </td>
             <td class="auto-style3">
-                <strong>
-                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="80px" CssClass="auto-style13" OnClick="GuardarButton_Click" />
-                </strong>
+                <asp:Button ID="GuardarButton" runat="server" Class="btn-primary" Text="Guardar" Width="80px" OnClick="GuardarButton_Click" />
             </td>
             <td>
-                <strong><em>
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="80px" CssClass="auto-style13" OnClick="EliminarButton_Click" />
-                </em></strong>
+                <em>
+                <asp:Button ID="EliminarButton" runat="server" Class="btn-primary" Text="Eliminar" Width="80px" OnClick="EliminarButton_Click" />
+                </em>
             </td>
         </tr>
         <tr>

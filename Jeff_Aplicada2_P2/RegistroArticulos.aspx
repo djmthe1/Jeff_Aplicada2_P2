@@ -40,9 +40,6 @@
             text-decoration: underline;
             color: #333300;
         }
-        .auto-style13 {
-            font-weight: bold;
-        }
         .auto-style14 {
             width: 265px;
         }
@@ -74,9 +71,7 @@
                 <asp:TextBox ID="ArticuloIdTextBox" runat="server" Width="260px"></asp:TextBox>
             </td>
             <td>
-                <strong>
-                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" Width="80px" CssClass="auto-style13" OnClick="BuscarButton_Click" />
-                </strong>
+                <asp:Button ID="BuscarButton" runat="server" Class="btn-primary" Text="Buscar" Width="80px" OnClick="BuscarButton_Click" />
             </td>
         </tr>
         <tr>
@@ -112,19 +107,15 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <strong>
-                <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" Width="80px" CssClass="auto-style13" OnClick="NuevoButton_Click" />
-                </strong>
+                <asp:Button ID="NuevoButton" runat="server" Class="btn-primary" Text="Nuevo" Width="80px" OnClick="NuevoButton_Click" />
             </td>
             <td class="auto-style3">
-                <strong>
-                <asp:Button ID="GuardarButton" runat="server" Text="Guardar" Width="80px" CssClass="auto-style13" OnClick="GuardarButton_Click" />
-                </strong>
+                <asp:Button ID="GuardarButton" runat="server" Class="btn-primary" Text="Guardar" Width="80px" OnClick="GuardarButton_Click" />
             </td>
             <td>
-                <strong><em>
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Width="80px" CssClass="auto-style13" OnClick="EliminarButton_Click" />
-                </em></strong>
+                <em>
+                <asp:Button ID="EliminarButton" runat="server" Class="btn-primary" Text="Eliminar" Width="80px" OnClick="EliminarButton_Click" />
+                </em>
             </td>
         </tr>
     </table>
