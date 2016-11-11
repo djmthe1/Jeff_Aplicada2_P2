@@ -13,9 +13,9 @@ namespace BLL
         public int Cantidad { get; set; }
         public int Precio { get; set; }
 
-        public VentasDetalle(int ventaId, int articuloId, int cantidad, int precio)
+        public VentasDetalle(int articuloId, int cantidad, int precio)
         {
-            this.VentaId = ventaId;
+            this.ArticuloId = articuloId;
             this.Cantidad = cantidad;
             this.Precio = precio;
         }

@@ -6,22 +6,6 @@
 <head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
-         <header class="main-header">
-        <nav class="navbar navbar-static-top">
-            <div class="navbar-main">              
-              <div class="container">
-                <div id="navbar" class="navbar-collapse collapse pull-right">
-                  <ul class="nav navbar-nav">
-                    <li><a class="is-active" href="Index.aspx">INICIO</a></li>
-                    <li><a href="Buscar.aspx">BUSQUEDA</a></li>
-                    <li><a href="Contacto.aspx">CONTACTO</a></li>
-                    <li><a href="Login.aspx">LOGIN</a></li>
-                  </ul>
-                </div> <!-- /#navbar -->
-              </div> <!-- /.container -->              
-            </div> <!-- /.navbar-main -->
-        </nav>
-    </header> <!-- /. main-header -->
     </asp:ContentPlaceHolder>
 </head>
 <body>

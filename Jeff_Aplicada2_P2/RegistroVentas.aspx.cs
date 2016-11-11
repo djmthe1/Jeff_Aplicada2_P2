@@ -16,6 +16,7 @@ namespace Jeff_Aplicada2_P2
             Ventas venta = new Ventas();
             if (!IsPostBack)
             {
+                FechaTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 LLenarDropDownList();
                 LLenarGridView();
             }
@@ -67,6 +68,10 @@ namespace Jeff_Aplicada2_P2
             venta.Fecha = FechaTextBox.Text;
             int.TryParse(MontoTextBox.Text, out monto);
             venta.Monto = monto;
+            foreach(GridViewRow row in GridView.Rows)
+            {
+                venta.AgregarArticulos(Convert.ToInt32(row.Cells[0].Text), Convert.ToInt32(row.Cells[1].Text), Convert.ToInt32(row.Cells[2].Text));
+            }
         }
 
         private void DevolverValores(Ventas venta)
@@ -74,6 +79,13 @@ namespace Jeff_Aplicada2_P2
             VentaIdTextBox.Text = venta.VentaId.ToString();
             FechaTextBox.Text = venta.Fecha;
             MontoTextBox.Text = venta.Monto.ToString();
+            foreach (var articulo in venta.detalle)
+            {
+                DataTable dt = (DataTable)ViewState["Articulos"];
+                dt.Rows.Add(articulo.ArticuloId, articulo.Cantidad, articulo.Precio);
+                ViewState["Articulos"] = dt;
+                ObtenerGridView();
+            }
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -98,22 +110,31 @@ namespace Jeff_Aplicada2_P2
             }
         }
 
-        /*private void Monto()
+        private void Monto()
         {
-
-        }*/
+            int Anterior, presente = 0;
+            int.TryParse(MontoTextBox.Text, out Anterior);
+            int precio, cantidad, total = 0;
+            int.TryParse(PrecioTextBox.Text, out precio);
+            int.TryParse(CantidadTextBox.Text, out cantidad);
+            total = precio * cantidad;
+            presente = Anterior + total;
+            MontoTextBox.Text = presente.ToString();
+        }
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
             try
             {
-                DataTable dtArticulos = (DataTable) ViewState["Articulos"];
+                DataTable dtArticulos = (DataTable)ViewState["Articulos"];
                 dtArticulos.Rows.Add(DropDownList.SelectedValue, CantidadTextBox.Text, PrecioTextBox.Text);
+                ViewState["Articulos"] = dtArticulos;
                 ObtenerGridView();
+                Monto();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Response.Write("<script>alert('Error al agregar')</script>");
+                Response.Write(ex);
             }
         }
 

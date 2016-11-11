@@ -63,6 +63,8 @@
       <DependentUpon>Parcial2Db.mdf</DependentUpon>
     </Content>
     <Content Include="Boostrap\toastr.min.css" />
+    <Content Include="Consultas\ConsultaArticulos.aspx" />
+    <Content Include="Consultas\ConsultaVentas.aspx" />
     <Content Include="JQuery\toastr.min.js" />
     <Content Include="packages.config" />
     <Content Include="Master.Master" />
@@ -70,10 +72,25 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="RegistroArticulos.aspx" />
     <Content Include="RegistroVentas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaArticulos.aspx.cs">
+      <DependentUpon>ConsultaArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaArticulos.aspx.designer.cs">
+      <DependentUpon>ConsultaArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVentas.aspx.cs">
+      <DependentUpon>ConsultaVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaVentas.aspx.designer.cs">
+      <DependentUpon>ConsultaVentas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,6 +103,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroArticulos.aspx.cs">
+      <DependentUpon>RegistroArticulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroArticulos.aspx.designer.cs">
+      <DependentUpon>RegistroArticulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistroVentas.aspx.cs">
       <DependentUpon>RegistroVentas.aspx</DependentUpon>

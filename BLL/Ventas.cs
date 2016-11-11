@@ -26,9 +26,9 @@ namespace BLL
             detalle = new List<VentasDetalle>();
         }
 
-        public void AgregarArticulos(int ventaId, int articuloId, int cantidad, int precio)
+        public void AgregarArticulos(int articuloId, int cantidad, int precio)
         {
-            this.detalle.Add(new VentasDetalle(ventaId, articuloId, cantidad, precio));
+            this.detalle.Add(new VentasDetalle(articuloId, cantidad, precio));
         }
 
         public override bool Insertar()
@@ -45,6 +45,7 @@ namespace BLL
                     foreach (VentasDetalle articulos in detalle)
                     {
                         conexion.Ejecutar(string.Format("INSERT INTO VentasDetalle (VentaId, ArticuloId, Cantidad, Precio) VALUES ({0},{1},{2},{3})", retorno, articulos.ArticuloId, articulos.Cantidad, articulos.Precio));
+                        conexion.Ejecutar(string.Format("UPDATE Articulos SET Existencia=Existencia-" + articulos.Cantidad + " WHERE ArticuloId=" + articulos.ArticuloId));
                     }
                 }
             }
@@ -67,7 +68,8 @@ namespace BLL
                     conexion.Ejecutar(string.Format("DELETE FROM VentasDetalle WHERE VentaId={0}", this.VentaId));
                     foreach (VentasDetalle articulos in detalle)
                     {
-                        conexion.Ejecutar(string.Format("INSERT INTO VentasDetalle (VentaId, ArticuloId, Cantidad, Precio) VALUES ({0},{1},{2},{3})", retorno, articulos.ArticuloId, articulos.Cantidad, articulos.Precio));
+                        conexion.Ejecutar(string.Format("INSERT INTO VentasDetalle (VentaId, ArticuloId, Cantidad, Precio) VALUES ({0},{1},{2},{3})", this.VentaId, articulos.ArticuloId, articulos.Cantidad, articulos.Precio));
+                        
                     }
                 }
             }
@@ -111,7 +113,7 @@ namespace BLL
                 dtArticulos = conexion.ObtenerDatos("SELECT * FROM VentasDetalle WHERE VentaId=" + IdBuscado);
                 foreach (DataRow row in dtArticulos.Rows)
                 {
-                    this.AgregarArticulos((int)dt.Rows[0]["VentaId"], (int)dt.Rows[0]["ArticuloId"], (int)dt.Rows[0]["Cantidad"], (int)dt.Rows[0]["Precio"]);
+                    this.AgregarArticulos((int)dtArticulos.Rows[0]["ArticuloId"], (int)dtArticulos.Rows[0]["Cantidad"], (int)dtArticulos.Rows[0]["Precio"]);
                 }
             }
             return dt.Rows.Count > 0;
